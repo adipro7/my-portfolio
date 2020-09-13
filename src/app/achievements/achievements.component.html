@@ -1,0 +1,224 @@
+<canvas id="canvas"></canvas>
+<div id="colorlib-page">
+  <div class="container-wrap">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar"
+      aria-expanded="false" aria-controls="navbar"><i></i></a>
+    <!----Side bar--->
+    <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+      <div class="text-center">
+        <div class="author-img" style="background-image: url(../../assets/images/dp1.jpg);"></div>
+        <h1 id="colorlib-logo"><a routerLink='/home' (click)=onClick()>Aditya Prakash Gupta</a>
+        </h1>
+      </div>
+      <nav id="colorlib-main-menu" role="navigation" class="navbar">
+        <div id="navbar" class="collapse">
+          <ul>
+            <li><a href="#" data-nav-section="about">Achievements</a></li>
+            <li><a href="#" data-nav-section="skills">Certifications</a></li>
+            <li><a href="#" data-nav-section="education">Volunteering</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+    <div id="colorlib-main">
+      <!------Achievements---------------->
+      <section class="colorlib-skills" data-section="about">
+        <div class="colorlib-narrow-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+              <!--	<span class="heading-meta">My Specialty</span> -->
+              <div class="about-desc">
+                <h1><strong>Achievements</strong></h1>
+              </div><br>
+            </div>
+            
+            <div class="row" *ngFor="let x of achieve_count1">
+              <br>
+                <article class="timeline-entry animate-box">
+                    <ul class="fa-ul mb-0">
+                        <li *ngFor="let y of achieve_count2" data-animate-effect="fadeIn{{achievements[x+y]['fade']}}" class="col-md-6">
+                          <i class="fa-li fa fa-star" style="color:rgb(255, 145, 0)"></i>
+                          <div>
+                            <a href="{{achievements[x+y]['certificate']}}" style="text-decoration:none;">
+                              <div>
+                                <h3 class="mb-6">{{achievements[x+y]['title']}}
+                                    <span>'{{achievements[x+y]['year']}}</span>
+                                </h3>
+                              </div>
+                              <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                                <div id="divMain">
+                                  <div id='left-div' class="resume-content">
+                                    <img style='float:left; margin:0 10px; border-radius: 5%;' height='120px;'
+                                      width='100px;' class='img-fluid' src="{{achievements[x+y]['logo']}}">
+                                  </div>
+                                  <div id='right-div' class='resume-content'>
+                                    <div class="subheading mb-0">
+                                      <p><strong>{{achievements[x+y]['event type']}}</strong><br>
+                                      {{achievements[x+y]['summary']}}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        </li>
+                    </ul>
+                </article>
+                </div>
+            </div>
+          </div>
+      </section>
+      
+      <section class="colorlib-skills" data-section="skills">
+        <div class="colorlib-narrow-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+              <!--	<span class="heading-meta">My Specialty</span> -->
+              <div class="about-desc">
+                <h1><strong>Certifications</strong></h1>
+              </div><br>
+            </div>
+            <div class="row" *ngFor="let x of certi_count1">
+              <br>
+              <article class="timeline-entry animate-box">
+                <ul class="fa-ul mb-0">
+                  <li *ngFor="let y of certi_count2" data-animate-effect="fadeIn{{certifications[x+y]['fade']}}" class="col-md-6">
+                    <i class="fa-li fa fa-certificate" style="color:rgb(255, 145, 0)"></i>
+                    <div>
+                      
+                      <a href="{{certifications[x+y]['certificate']}}" style="text-decoration:none;">
+                        <div>
+                          <h3 class="mb-6">{{certifications[x+y]['title']}}
+                            <span>[{{certifications[x+y]['year']}}]</span>
+                          </h3>
+                        </div>
+                        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                          <div id="divMain">
+                            <div id='left-div' class="resume-content">
+                              <img style='float:left; margin:0 10px; border-radius: 5%;' height='120px;' width='100px;'
+                                class='img-fluid' src="{{certifications[x+y]['logo']}}">
+                            </div>
+                            <div id='right-div' class='resume-content'>
+                              <div class="subheading mb-0">
+                                <p>Issued by: <strong>{{certifications[x+y]['issue']}}</strong><br>
+                                  Certificate ID: <b>{{certifications[x+y]['id']}}</b>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <br>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="colorlib-skills" data-section="education">
+        <div class="colorlib-narrow-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+              <!--	<span class="heading-meta">My Specialty</span> -->
+              <div class="about-desc">
+                <h1><strong>Volunteering</strong></h1>
+              </div><br>
+            </div>
+            <div class="row" *ngFor="let x of vol_count1">
+              <br>
+              <article class="timeline-entry animate-box">
+                <ul class="fa-ul mb-0">
+                  <li *ngFor="let y of vol_count2" data-animate-effect="fadeIn{{volunteering[x+y]['fade']}}"
+                    class="col-md-6">
+                    <i class="fa-li fa fa-chevron-circle-right" style="color:rgb(255, 145, 0)"></i>
+                    <div>
+                      <a href="/achievements" style="text-decoration:none;">
+                        <div>
+                          <h3 class="mb-6">{{volunteering[x+y]['title']}} @<br> {{volunteering[x+y]['event']}}
+                          </h3>
+                        </div>
+                        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                          <div id="divMain">
+                            <div id='left-div' class="resume-content">
+                              <img style='float:left; margin:0 10px; border-radius: 5%;' height='120px;' width='100px;'
+                                class='img-fluid' src="{{volunteering[x+y]['logo']}}">
+                            </div>
+                            <div id='right-div' class='resume-content'>
+                              <div class="subheading mb-0">
+                                <p><strong>
+                                  [ {{volunteering[x+y]['time period']}} ]
+                                </strong><br>
+                                {{volunteering[x+y]['summary']}}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------Footer------------->
+      <section class="colorlib-footer" data-section="footer">
+        <div class="colorlib-narrow-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="hire">
+                  <p style="text-align: center"><strong>Feel Free to Connect/Follow/Ping me!</strong></p>
+                  <div align=center>
+                    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+                    <p style="font-size: 30px; margin-bottom: 0px;">
+                      <a href="mailto:aditythebest38@gmail.com" style="color: black;" class="fa fa-google"></a>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://www.linkedin.com/in/aditya-prakash-gupta/" style="color: black;"
+                        class="fa fa-linkedin"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://www.quora.com/profile/Aditya-Prakash-Gupta-1" style="color: black;"
+                        class="fa fa-quora"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://github.com/adipro7" style="color: black;" class="fa fa-github"></a>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://www.facebook.com/apg1167" style="color: black;"
+                        class="fa fa-facebook-official"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://www.instagram.com/aditya_prakash_gupta/" style="color: black;"
+                        class="fa fa-instagram"></a>
+                    </p>
+                  </div>
+                  <p style="text-align: center; margin-bottom: -20px;"><strong>&copy; 2020-Aditya Prakash
+                      Gupta</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- end:colorlib-main -->
+  </div>
+  <!-- end:container-wrap -->
+</div>
+<!-- end:colorlib-page -->
+<!-- jQuery -->
+<script src="../../assets/js/bootstrap.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../../assets/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="../../assets/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="../../assets/js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="../../assets/js/jquery.flexslider-min.js"></script>
+<!-- Counters -->
+<script src="../../assets/js/jquery.countTo.js"></script>
+<!-- MAIN JS -->
+<script src="../../assets/js/main.js"></script>
+<!--canvas js--->
+<script src="../../assets/js/canvas.js"></script>
