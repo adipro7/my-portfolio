@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 export class AchievementsComponent implements OnInit {
   
   achievements=[
-    {
+    /*{
       "title": "Incoming Summer Intern",
       "year": "21",
       "logo": "../../assets/images/oracle.png",
@@ -16,7 +16,7 @@ export class AchievementsComponent implements OnInit {
       "summary": "Member Technology Staff(MTS) Intern at Server Technology Group.",
       "certificate": "achievements",
       "fade": "Left"
-    },
+    },*/
     {
       "title": "INSPIRE Scholarship",
       "year": "18",
@@ -25,6 +25,15 @@ export class AchievementsComponent implements OnInit {
       "summary": "Awarded for being among top 1 percentile students.",
       "certificate": "achievements",
       "fade": "Right"
+    },
+    {
+      "title": "Boeing IIT National Aeromodelling Competition",
+      "year": "19",
+      "logo": "../../assets/images/ktj.jpeg",
+      "event type": "Kshitij, IIT Kharagpur",
+      "summary": "Qualified first round of the event.",
+      "certificate": "achievements",
+      "fade": "Left"
     },
     {
       "title": "Digisim, Udyam",
@@ -62,16 +71,7 @@ export class AchievementsComponent implements OnInit {
       "certificate": "../../assets/achievements/Pixelate 2019 merit.pdf",
       "fade": "Right"
     },
-    {
-      "title": "Boeing IIT National Aeromodelling Competition",
-      "year": "19",
-      "logo": "../../assets/images/ktj.jpeg",
-      "event type": "Kshitij, IIT Kharagpur",
-      "summary": "Qualified first round of the event.",
-      "certificate": "achievements",
-      "fade": "Left"
-    },
-    {
+    /*{
       "title": "Changed Department on the basis of merit",
       "year": "18",
       "logo": "../../assets/images/iit bhu.png",
@@ -79,11 +79,11 @@ export class AchievementsComponent implements OnInit {
       "summary": "On the basis of my 1st semester CPI.",
       "certificate": "achievements",
       "fade": "Right"
-    }
+    }*/
   ];
   
   achieve_count2=[0,1]
-  achieve_count1=[0,2,4,6]
+  achieve_count1=[0,2,4]
   certifications=[
     {
       "title": "Deep Learning and Neural Networks",
